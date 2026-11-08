@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cuentas de Libertybank.com</title>
+<link rel="stylesheet" href="vidaa.css" />
+<script src="hard.js"></script>
+</head>
+<body>
+
+<div class="top-menu">
+    <div>
+        <a href="#">Canales ProFinance</a>
+        <a href="#">Sobre Nosotros</a>
+        <a href="hellow.html">Inicio</a>
+    </div>
+</div>
+
+
+<!-- Barra de Navegación -->
+<header class="navbar">
+    <!--<div class="logo">LIBERT&FINANCy</div>-->
+
+	<div class="logo">
+	    <a href="#">
+ 	       <img src="logopry.png" alt="Banreservas Logo" style=" height: 70px; width: auto; display: block;"> 
+	    </a>
+	</div>
+
+    <header class="navbar-model">
+               <nav>
+            <a href="#" onclick="cargarModulo('inversiones')">INVERSIONES</a>
+        </nav>
+    </header>
+
+
+    <nav class="main-nav">
+        <a href="Accounts.html">CUENTAS</a>
+	<a href="hellow.html">ATRÁS</a>
+        <a href="Cards.html">TARJETAS</a>
+        <a href="#">PRÉSTAMOS</a>
+        <a href="#">SEGUROS</a>
+    </nav>
+
+   <!-- MENÚ DE NAVEGACIÓN SIMULADO (Basado en tu Header Negro/Amarillo) -->
+
+
+</header>
+
+<!-- Banner Principal (Hero) -->
+<section class="hero-container">
+          <div class="slide" style="min-width: 100%; background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('https://wortev.capital/wp-content/uploads/2022/03/tipos-de-inversiones-en-mexico.webp'); background-size: cover; background-position: center;">
+            <div class="hero-content">
+                <h1>Inversiones</h1>
+            </div>
+        </div>
+    </div>
+</section>
+ 
+
+
+<!-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------> 
+
+    <!-- INTERFAZ DINÁMICA PRINCIPAL -->
+    <main class="main-workspace">
+<p id="parrafo-bienvenida">Presione para reajustar en Inversiones.</p>
+
+  <!-- ========================================== -->
+        <!-- MÓDULO 2: INVERSIONES                      -->
+        <!-- ========================================== -->
+        <div id="modulo-inversiones" class="bank-module" style="display: none;">
+            <aside class="sidebar-menu">
+                <div class="menu-section">
+                    <h4 class="active" onclick="mostrarSubContenido('inv-plazo')">Depósitos a Plazo</h4>
+                </div>
+                <div class="menu-section">
+                    <h4 onclick="mostrarSubContenido('inv-fondos')">Fondos de Inversión</h4>
+                </div>
+            </aside>
+
+            <section class="details-content">
+                <div id="sub-inv-plazo" class="sub-view">
+                    <h2>Certificados Financieros / Plazo Fijo</h2>
+                    <p class="subtitle">Asegura una rentabilidad fija y competitiva para tus excedentes de capital.</p>
+                    <div class="info-block">
+                        <h3>Condiciones generales</h3>
+                        <ul>
+                            <li>Montos mínimos de apertura desde RD$ 10,000.</li>
+                            <li>Plazos flexibles desde los 30 hasta los 365 días.</li>
+                            <li>Pago de intereses mensuales depositados de forma automática en tu cuenta.</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- ========================================== -->
+        <!-- MÓDULO 3: TARJETAS                          -->
+        <!-- ========================================== -->
+        <div id="modulo-tarjetas" class="bank-module" style="display: none;">
+            <aside class="sidebar-menu">
+                <div class="menu-section">
+                    <h4 class="active" onclick="mostrarSubContenido('tj-credito')">Tarjetas de Crédito</h4>
+                </div>
+                <div class="menu-section">
+                    <h4 onclick="mostrarSubContenido('tj-debito')">Tarjetas de Débito</h4>
+                </div>
+            </aside>
+
+            <section class="details-content">
+                <div id="sub-tj-credito" class="sub-view">
+                    <h2>Tarjetas de Crédito MasterCard Personal</h2>
+                    <p class="subtitle">El respaldo internacional que necesitas para todas tus compras diarias.</p>
+                    <div class="info-block">
+                        <h3>Ventajas Exclusivas</h3>
+                        <ul>
+                            <li>Programa de acumulación de puntos por cada compra realizada.</li>
+                            <li>Hasta un 25% de devolución en establecimientos afiliados seleccionados.</li>
+                            <li>Financiamientos cómodos y seguros mediante transacciones diferidas.</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+          <!-- ========================================== -->
+        <!-- MÓDULO 1: CUENTAS                          -->
+        <!-- ========================================== -->
+        <div id="modulo-cuentas" class="bank-module">
+            <!-- Sidebar Izquierdo -->
+             <aside class="sidebar-menu">
+                <div class="menu-section">
+                    <h4 class="active" onclick="mostrarSubContenido('inv-plazo')">Depósitos a Plazo</h4>
+                </div>
+                <div class="menu-section">
+                    <h4 onclick="mostrarSubContenido('inv-fondos')">Fondos de Inversión</h4>
+                </div>
+            </aside>
+
+            <section class="details-content">
+                <div id="sub-inv-plazo" class="sub-view">
+                    <h2>Certificados Financieros / Plazo Fijo</h2>
+                    <p class="subtitle">Asegura una rentabilidad fija y competitiva para tus excedentes de capital.</p>
+                    <div class="info-block">
+                        <h3>Condiciones generales</h3>
+                        <ul>
+                            <li>Montos mínimos de apertura desde RD$ 10,000.</li>
+                            <li>Plazos flexibles desde los 30 hasta los 365 días.</li>
+                            <li>Pago de intereses mensuales depositados de forma automática en tu cuenta.</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+    </main>
+
+<p id="parrafo-bienvenida">Para reajustar, presione Inversiones.</p>
+
+
+    <!-- PIE DE PÁGINA COMPLETO (FOOTER) -->
+    <footer class="footer">
+        <div class="footer-top">
+            <!-- Columna de contacto y Redes Sociales -->
+            <div class="footer-col">
+                <h4>Contáctanos</h4>
+                <div class="contact-item">
+                    <i class="fa-solid fa-phone"></i>
+                    <span>809-288-4722</span>
+                </div>
+                <div class="contact-item">
+                    <i class="fa-solid fa-location-dot"></i>
+                    <span>Sucursales, subagentes y marcas afiliadas</span>
+                </div>
+                <div class="social-links">
+                    <a href="#"><i class="fa-brands fa-facebook"></i></a>
+                    <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
+                    <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+                </div>
+            </div>
+            
+            <!-- Columna Ayuda -->
+            <div class="footer-col">
+                <h4>¿Necesitas Ayuda?</h4>
+                <ul>
+                    <li><a href="#">Videos tutoriales</a></li>
+                    <li><a href="#">Preguntas Frecuentes</a></li>
+                    <li><a href="#">Servicio Al Cliente</a></li>
+                </ul>
+            </div>
+
+            <!-- Columna Legal -->
+            <div class="footer-col">
+                <h4>Informaciones</h4>
+                <ul>
+                    <li><a href="#">Seguridad y Fraude</a></li>
+                    <li><a href="#">Términos y Condiciones</a></li>
+                    <li><a href="#">Aviso Legal y Privacidad</a></li>
+                    <li><a href="#">Tasas de Referencia</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Fila de Créditos y Logos Institucionales -->
+        <div class="footer-bottom">
+            <div>
+                &copy; 2026 Entidad Anónima y asociados. Todos los derechos reservados.
+            </div>
+            <div class="footer-legal-logos">
+                <span class="legal-badge">SB ENTIDAD AUTORIZADA</span>
+                <span class="legal-badge">UAF</span>
+                <span class="legal-badge">PRO USUARIO</span>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>

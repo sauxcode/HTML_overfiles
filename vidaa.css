@@ -1,0 +1,1009 @@
+/* ==========================================================================
+   1. RESET Y CONFIGURACIÓN GENERAL (ESTILO OSCURO LIBERTYBANK)
+   ========================================================================== */
+
+
+/* --- General styles & Reset --- */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #020203;
+            color: #faf7f7;
+        }
+a {
+    color: #eab308; /* Enlaces color amarillo de acento */
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: #eab308;
+    text-decoration: underline;
+}
+/* ==========================================================================
+   2. CABECERA Y ENTORNO DE NAVEGACIÓN (HEADER)
+   ========================================================================== */
+        
+        /* --- TOP BAR --- */
+        .top-menu {
+            background-color: #dbc900; /*  #002d62: azul obscuro */
+            color: black;
+            padding: 8px 10%;
+            display: flex;
+            justify-content: space-between;
+            font-size: 12px;
+        }
+
+        .top-menu a {
+            color: #666666; /* white*/
+            text-decoration: none;
+            margin-left: 15px;
+        }
+
+
+        /* --- MAIN NAV. BAR --- */
+        .navbar {
+            background-color: #030000; /* #ffffff*/
+            padding: 15px 10%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .main-nav a {
+            color: white; /* gray:  #333*/
+            text-decoration: none;
+            margin-left: 20px;
+            font-weight: 600;
+            font-size: 14px;
+        }
+
+	.main-nav a:hover{
+	    color:  #8c8c01;
+	}
+
+
+/* ==========================================================================
+   3. SECCIÓN HERO (SLIDER AUTOMÁTICO DE IMÁGENES)
+   ========================================================================== */
+        /* --- HERO SECTION --- 
+        .hero-container {
+            width: 100%;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .hero-slider {
+            display: flex;
+            width: 100%;
+            transition: transform 0.5s ease-in-out;
+        }
+
+        .slide {
+            flex: 0 0 100%;
+            min-width: 100%;
+            height: 450px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            padding: 0 10%;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .hero-content h1 {
+            font-size: 42px;
+            max-width: 500px;
+            line-height: 1.2;
+            margin-bottom: 20px;
+        }
+
+        .btn-hero {
+            border: 2px solid white;
+	    border-radius: 30px;
+            background: transparent;
+            color: white;
+            padding: 10px 25px;
+            font-size: 14px;
+            font-weight: bold;
+            cursor: pointer;
+            text-transform: uppercase;
+            transition: 0.3s;
+        }
+
+        .btn-hero:hover {
+            background-color: white;
+            color: #dbe302;
+        }*/         
+
+  
+
+
+
+
+
+        /* --- HERO SECTION --- */
+        .hero-container {
+            width: 100%;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .hero-slider {
+            display: flex;
+            width: 100%;
+            transition: transform 0.5s ease-in-out;
+        }
+
+        .slide {
+            flex: 0 0 100%;
+            min-width: 100%;
+            height: 450px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            padding: 0 10%;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .hero-content h1 {
+            font-size: 42px;
+            max-width: 500px;
+            line-height: 1.2;
+            margin-bottom: 20px;
+        }
+
+        .btn-hero {
+            border: 2px solid white;
+	    border-radius: 30px;
+            background: transparent;
+            color: white;
+            padding: 10px 25px;
+            font-size: 14px;
+            font-weight: bold;
+            cursor: pointer;
+            text-transform: uppercase;
+            transition: 0.3s;
+        }
+
+        .btn-hero:hover {
+            background-color: white;
+            color: #dbe302;
+        } 
+
+
+/* ==========================================================================
+   4. DISTRIBUCIÓN DE INTERFAZ GENERAL (SIDEBAR + CONTENIDO)
+   ========================================================================== */
+.main-workspace, .calculadoras-container {
+    display: flex;
+    max-width: 85%;
+    margin: 40px auto;
+    gap: 40px;
+    min-height: 500px;
+}
+
+/* Menú Lateral (Sidebar) */
+.sidebar-menu {
+    width: 28%;
+    background-color: black;
+    border-radius: 8px;
+    border : 1px solid white;
+    padding: 25px;
+    align-self: flex-start;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.menu-section {
+    margin-bottom: 20px;
+}
+
+.menu-section h4 {
+    font-size: 15px;
+    color: white;
+    padding: 10px 0;
+    cursor: pointer;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    transition: color 0.3s;
+}
+
+.menu-section h4.active, .menu-section h4:hover {
+    color: #facc15;
+}
+
+.sidebar-menu ul {
+    list-style: none;
+    margin-top: 8px;
+    padding-left: 10px;
+}
+
+.sidebar-menu ul li {
+    margin-bottom: 10px;
+}
+
+.sidebar-menu ul li a {
+    color: white;
+    font-size: 14px;
+}
+
+.sidebar-menu ul li a.active{
+    color: #facc15;
+    font-size: 14px;
+}
+
+/* Bloque Informativo Derecho */
+.details-content, .calculator-content {
+    width: 72%;
+    background-color: black;
+    border : 1px solid white;
+    border-radius: 8px;
+    padding: 40px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.details-content h2, .calculator-content h2 {
+    font-size: 28px;
+    margin-bottom: 10px;
+    border-bottom: 2px solid #facc15;
+    padding-bottom: 10px;
+}
+
+.subtitle {
+    color: #94a3b8;
+    margin-bottom: 30px;
+    font-size: 15px;
+}
+
+.info-block h3 {
+    font-size: 18px;
+    margin-bottom: 15px;
+    color: #facc15;
+}
+
+.info-block ul {
+    padding-left: 20px;
+    line-height: 1.8;
+    color: #cbd5e1;
+}
+
+/* ==========================================================================
+   5. DISEÑO DE FORMULARIOS Y CALCULADORAS
+   ========================================================================== */
+.currency-selector {
+    margin-bottom: 30px;
+}
+
+.currency-selector label {
+    font-size: 12px;
+    color: #94a3b8;
+    display: block;
+    margin-bottom: 8px;
+}
+
+.currency-selector button {
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: #ffffff;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: all 0.3s;
+}
+
+.currency-selector button.active {
+    background-color: #facc15;
+    color: #0f172a;
+    border-color: #facc15;
+}
+
+.calc-block {
+    background-color: #101010;
+    padding: 20px;
+    border-radius: 6px;
+    margin-bottom: 20px;
+    border-left: 4px solid #facc15;
+}
+
+.calc-block h3 {
+    font-size: 14px;
+    color: white;
+    margin-bottom: 5px;
+}
+
+.calc-block label {
+    color: #ffffff;
+    font-size: 14px;
+    display: block;
+    margin-bottom: 8px;
+}
+
+.input-row, .result-block {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-top: 10px;
+}
+
+input[type="number"], input[type="text"] {
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: #ffffff;
+    padding: 12px;
+    font-size: 16px;
+    border-radius: 4px;
+    width: 100%;
+}
+
+input[readonly] {
+    border-color: transparent;
+    font-weight: bold;
+    color: #facc15;
+    font-size: 18px;
+}
+
+.btn-clear {
+    background-color: transparent;
+    border: 1px solid #ff0000; /* Rojo para limpiar/borrar */
+    color: #ff0000;
+    padding: 10px 25px;
+    font-weight: bold;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.btn-clear:hover {
+    background-color:#ff0000;
+    color: #ffffff;
+}
+
+/* ==========================================================================
+   6. MAPA INTERACTIVO DE SUCURSALES
+   ========================================================================== */
+/* --- SECCIÓN UBICACIÓN / MAP. (BankStily) --- */
+
+        #map { 
+            height: 300px; 
+            width: 100%; 
+        }
+
+
+        .map-section {
+            background-color: #f1f5f9;
+            padding: 60px 10%;
+        }
+
+        .map-card {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+            display: flex;
+            flex-direction: row;
+            min-height: 400px;
+        }
+
+	/* El mapa inicia oculto */
+	 .map-controls {
+	    display: none;
+	}
+
+	/* .map-card-body{
+    	    display: none;
+	}*/
+
+	.map-card-body {
+   	   max-height: 0;
+   	   opacity: 0;
+  	   overflow: hidden;
+  	   width: 100%; /* Garantiza que ocupe todo el ancho de la tarjeta */
+   	   transition: max-height 0.5s ease-out, opacity 0.5s ease-out;
+	}
+        .map-info {
+            width: 45%;
+            padding: 40px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            background-color: #ffffff;
+        }
+
+        .map-info h3 {
+            font-size: 24px;
+            color:  #dbe302; /*001730,  #8b04c4*/
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+
+        .map-info p {
+            color: #64748b;
+            font-size: 15px;
+            line-height: 1.6;
+            margin-bottom: 25px;
+        }
+
+        .btn-map {
+            align-self: flex-start;
+            border: 2px solid  #dbe302; 
+            background: transparent;
+            color:  #dbe302; /*redscotiabank:#dc2626 #8b04c4like Borde rojo institucional*/
+            padding: 12px 28px;
+            border-radius: 25px;
+            font-size: 14px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.3s;
+            text-decoration: none;
+            text-align: center;
+        }
+
+        .btn-map:hover {
+            background-color: #dbe302;
+            color: white;
+        }
+
+        @media (max-width: 768px) {
+            .map-card { flex-direction: column; }
+            #map { width: 100%; height: 300px; }
+            .map-info { width: 100%; }
+            .tabs { flex-wrap: wrap; gap: 16px; }
+            .hero-content h1 { font-size: 32px; }
+            .cookie-banner { flex-direction: column; gap: 16px; align-items: flex-start; }
+             }
+
+	/* Cuando se presione el botón, se expandirá con una animación fluida */
+	.map-active .map-card-body {
+   	    max-height: 500px; /* Una altura máxima segura para desplegar el mapa */
+   	    opacity: 1;
+	}
+
+	.map-active .map-controls {
+   	   display: block !important; 
+  	  max-height: 500px; 
+ 	   opacity: 1;
+	}
+
+
+	.btn_selct{
+	  background: transparent;
+	  border-radius: 25px;
+	  border: 2px solid black;
+	  padding: 12px 28px;
+	  display : flex;
+	  margin: 22px;
+	}
+
+	.btn_selct:hover{
+	  background-color: black;
+	  color: white;
+	}
+
+/* ==========================================================================
+   7. PIE DE PÁGINA (FOOTER) Y BANNER DE COOKIES
+   ========================================================================== */
+        /* --- PIE DE PÁGINA DETALLADO (FOOTER) --- */
+        .footer {
+            background-color: #000103;
+            color: #ffffff;
+            padding: 60px 10% 30px 10%;
+            font-size: 14px;
+        }
+
+        .footer-top {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 40px;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+            padding-bottom: 40px;
+        }
+
+        .footer-col h4 {
+            font-size: 16px;
+            margin-bottom: 20px;
+            font-weight: 600;
+            color: #f8fafc;
+        }
+
+        .footer-col ul {
+            list-style: none;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 12px;
+        }
+
+        .footer-col ul li a {
+            color: #b8b794;
+            text-decoration: none;
+            transition: 0.2s;
+        }
+
+        .footer-col ul li a:hover {
+            color: #ffffff;
+            text-decoration: underline;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            color: #b8b794 ;/*#94a3b8*/
+            margin-bottom: 15px;
+        }
+
+        .contact-item i {
+            color: #ffffff;
+            font-size: 16px;
+        }
+
+        .social-links {
+            margin-top: 20px;
+            display: flex;
+            gap: 15px;
+        }
+
+        .social-links a {
+            color: #b8b794;/*94a3b8*/
+            font-size: 20px;
+            transition: 0.2s;
+        }
+
+        .social-links a:hover {
+            color: #00ff08; /* #ff8200*/
+        }
+
+        .footer-bottom {
+            padding-top: 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 25px;
+        }
+
+        .footer-legal-logos {
+            display: flex;
+            gap: 15px;
+        }
+
+        .legal-badge {
+            border: 1px solid rgba(255,255,255,0.15);
+            padding: 6px 12px;
+            border-radius: 4px;
+            font-weight: bold;
+            font-size: 11px;
+            background: rgba(255,255,255,0.03);
+            color: #e0e1cb ; /*#cbd5e1*/
+        }
+
+
+
+/* Banner de Cookies */
+.cookie-banner {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color:#e3df00;
+    border-top: 3px solid #cbd5e1;
+    padding: 20px 10%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 -10px 25px rgba(0, 0, 0, 0.5);
+    z-index: 10000;
+}
+
+/*.cookie-text {
+    font-size: 13px;
+    
+}
+
+  --- banner for cookies advertisement  --- 
+        .cookie-banner {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background-color: #eafa05; /* Verde brillante  #22c55e*/
+            color: black;
+            padding: 20px 10%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 -4px 15px rgba(0,0,0,0.15);
+            z-index: 1000;
+            font-size: 13px;
+            line-height: 1.5;
+            transition: all 0.4s ease-in-out;
+        }*/
+
+        .cookie-text {
+            max-width: 70%;
+color: black;
+    max-width: 75%;
+    line-height: 1.4;
+        }
+
+	.cookie-actions {
+	    display: flex;
+	    gap: 12px;
+	}
+
+	.btn-cookie {
+	    padding: 10px 24px;
+	    border: none;
+	    border-radius: 4px;
+	    font-weight: bold;
+	    cursor: pointer;
+	    font-size: 13px;
+	    transition: 0.2s;
+	}
+
+	.btn-accept {
+	    background-color:  black;
+	    color: #e1ff00; /* green words: 16a34a*/
+	}
+
+	.btn-accept:hover {
+	   background-color: #f3f700;
+	   color: black;
+	}
+
+	.btn-config {
+	   background-color: transparent;
+	   color: black;
+	   border: 1px solid black;
+	}
+
+	.btn-config:hover {
+	   background-color: black; /* rgba(255,255,255,0.1)*/
+	   color: #f3f700;
+	}
+
+
+	/* Estilos del Modal */
+.cookie-modal {
+    display: none; /* Inicia oculto */
+    position: fixed;
+    z-index: 10000; /* Por encima de todo, incluyendo el mapa */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Fondo oscuro translúcido */
+    justify-content: center;
+    align-items: center;
+}
+
+.cookie-modal-content {
+    background-color: #e1ff00;
+    padding: 30px;
+    border-radius: 12px;
+    max-width: 500px;
+    width: 90%;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+    animation: fadeInModal 0.3s ease-out;
+}
+
+.cookie-modal h3 {
+    margin-top: 0;
+    color: black;
+    font-size: 20px;
+}
+
+.cookie-modal p {
+    color: black;
+}
+
+.cookie-options {
+    margin: 20px 0;
+    text-align: left;
+}
+
+.cookie-opt-item {
+    margin-bottom: 15px;
+    border-bottom: 1px solid #000103;
+    padding-bottom: 10px;
+}
+
+.cookie-opt-item label {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+    font-size: 15px;
+    color: #64748b;
+}
+
+.cookie-opt-item p {
+    font-size: 13px;
+    color: #64748b;
+    margin: 5px 0 0 24px;
+}
+
+.cookie-modal-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.btn-close-modal {
+    background: #e1ff00;
+    color: black;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+.btn-save-modal {
+    background:black;
+    color: #e1ff00;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+@keyframes fadeInModal {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+
+
+        /* --- ESTILO EXCLUSIVO PARA LOGIN.HTML --- */
+        .login-wrapper {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 40px 10%;
+        }
+
+        .login-card {
+            background-color: #0aa0000; /* Fondo negro alternativo o puedes usar transparente con borde */
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            background: rgba(255, 255, 255, 0.02);
+            border-radius: 8px;
+            width: 100%;
+            max-width: 420px;
+            padding: 40px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            text-align: center;
+        }
+
+        .login-card h2 {
+            font-size: 26px;
+            color: #e0e0e0;
+            margin-bottom: 10px;
+        }
+
+        .login-card p {
+            font-size: 14px;
+            color: #b8b794;
+            margin-bottom: 30px;
+        }
+
+        .input-group {
+            position: relative;
+            margin-bottom: 20px;
+            text-align: left;
+        }
+
+        .input-group label {
+            display: block;
+            font-size: 13px;
+            color: #e0e0e0;
+            margin-bottom: 8px;
+            font-weight: 600;
+        }
+
+        .input-field-wrapper {
+            position: relative;
+        }
+
+        .input-field-wrapper i {
+            position: absolute;
+            left: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #b8b794;
+        }
+
+        .input-group input {
+            width: 100%;
+            padding: 12px 15px 12px 42px;
+            background-color: #030000;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 6px;
+            color: white;
+            font-size: 15px;
+            transition: 0.3s;
+        }
+
+        .input-group input:focus {
+            outline: none;
+            border-color: #f3f700;
+            box-shadow: 0 0 8px rgba(243, 247, 0, 0.2);
+        }
+
+        .form-options {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 13px;
+            margin-bottom: 25px;
+            color: #b8b794;
+        }
+
+        .form-options a {
+            color: #dfeb05;
+            text-decoration: none;
+        }
+
+        .form-options a:hover {
+            text-decoration: underline;
+        }
+
+        /* Botón basado en tus clases .tab-item / .item-selct */
+        .btn-login {
+            width: 100%;
+            background: #dbc900;
+            color: black;
+            border: 2px solid #dbc900;
+            padding: 12px;
+            font-size: 15px;
+            font-weight: bold;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .btn-login:hover {
+            border: 2px solid #f3f700;
+            background: transparent;
+            color: #f3f700;
+        }
+
+
+
+
+
+
+        /* --- SOLO DEL DASHBOARD --- */
+        .dashboard-wrapper {
+            flex: 1;
+            max-width: 80%;
+            margin: 40px auto;
+            width: 100%;
+        }
+
+        .welcome-header {
+            margin-bottom: 35px;
+            border-bottom: 2px solid #dfeb05;
+            padding-bottom: 15px;
+        }
+
+        .welcome-header h2 {
+            font-size: 28px;
+            color: #faf7f7;
+        }
+
+        .welcome-header span {
+            color: #dfeb05;
+        }
+
+        .welcome-header p {
+            font-size: 14px;
+            color: #b8b794;
+            margin-top: 5px;
+        }
+
+        /* Parrilla de Cuentas y Tarjetas */
+        .grid-products {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            margin-bottom: 40px;
+        }
+
+        .product-card {
+            background-color: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 8px;
+            padding: 25px;
+            transition: transform 0.3s, border-color 0.3s;
+        }
+
+        .product-card:hover {
+            transform: translateY(-3px);
+            border-color: #dfeb05;
+        }
+
+        .product-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+            color: #b8b794;
+            font-size: 14px;
+            font-weight: bold;
+            letter-spacing: 0.5px;
+        }
+
+        .product-header i {
+            font-size: 20px;
+            color: #dfeb05;
+        }
+
+        .product-balance {
+            font-size: 26px;
+            color: #ffffff;
+            font-weight: bold;
+            margin-bottom: 8px;
+            letter-spacing: 0.5px;
+        }
+
+        .product-number {
+            font-size: 13px;
+            color: #b8b794;
+        }
+
+        /* Sección de Transacciones Recientes */
+        .transactions-section {
+            background-color: rgba(255, 255, 255, 0.01);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 8px;
+            padding: 30px;
+        }
+
+        .transactions-section h3 {
+            font-size: 20px;
+            color: #e0e0e0;
+            margin-bottom: 20px;
+            border-left: 4px solid #dfeb05;
+            padding-left: 12px;
+        }
+
+        .transaction-table {
+            width: 100%;
+            border-collapse: collapse;
+            text-align: left;
+            font-size: 14px;
+        }
+
+        .transaction-table th {
+            color: #b8b794;
+            padding: 12px 15px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            font-weight: 600;
+        }
+
+        .transaction-table td {
+            padding: 15px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            color: #faf7f7;
+        }
+
+        .tx-amount {
+            font-weight: bold;
+        }
+
+        .tx-positive {
+            color: #00ff08;
+        }
+
+        .tx-negative {
+            color: #ff3b3b;
+        }
+

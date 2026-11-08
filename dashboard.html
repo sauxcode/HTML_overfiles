@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Libertybank</title>
+<link rel="stylesheet" href="vidaa.css" />
+<script src="hell.js"></script>
+    <link rel="stylesheet" href="https://cloudflare.com">
+    
+  
+</head>
+<body>
+
+    <!-- MENÚ SUPERIOR -->
+    <div class="top-menu">
+        <div>USD - Compra: 58.40 | Venta: 61.40</div>
+        <div>
+            <a href="#">Ayuda Urgente</a>
+            <a href="#">Seguridad Bancaria</a>
+        </div>
+    </div>
+
+    <!-- BARRA DE NAVEGACIÓN -->
+    <header class="navbar">
+
+	<div class="logo">
+	    <a href="login.html">
+ 	       <img src="logopry.png" alt="Banreservas Logo" style=" height: 70px; width: auto; display: block;"> 
+	    </a>
+	</div>
+
+        <nav class="main-nav">
+            <a href="hellow.html">INICIO</a>
+            <a href="#">PRODUCTOS</a>
+            <a href="#" id="logoutLink" onclick="ejecutarLogout()">CERRAR SESIÓN</a>
+        </nav>
+    </header>
+
+    <!-- ESTRUCTURA PRINCIPAL DEL TABLERO (DASHBOARD) -->
+    <main class="dashboard-wrapper">
+        <div class="welcome-header">
+            <h2>Bienvenido de vuelta, <span id="userDisplay">Usuario</span></h2>
+            <p>Resumen general de tus productos financieros activos al día de hoy.</p>
+        </div>
+
+        <!-- Bloques de Productos Financieros -->
+        <div class="grid-products">
+            <div class="product-card">
+                <div class="product-header">
+                    <span>CUENTA DE AHORROS PESOS</span>
+                    <i class="fa-solid fa-wallet"></i>
+                </div>
+                <div class="product-balance">RD$ 45,230.15</div>
+                <div class="product-number">No. ****8492</div>
+            </div>
+
+            <div class="product-card">
+                <div class="product-header">
+                    <span>CUENTA CORRIENTE DÓLARES</span>
+                    <i class="fa-solid fa-money-bill-trend-up"></i>
+                </div>
+                <div class="product-balance">US$ 1,250.00</div>
+                <div class="product-number">No. ****3104</div>
+            </div>
+
+            <div class="product-card">
+                <div class="product-header">
+                    <span>TARJETA MASTERCARD GOLD</span>
+                    <i class="fa-solid fa-credit-card"></i>
+                </div>
+                <div class="product-balance">RD$ 12,000.00 <span style="font-size:12px; color:#64748b;">Disp.</span></div>
+                <div class="product-number">No. ****4821</div>
+            </div>
+        </div>
+
+<!-- TABLA HISTÓRICA DE MOVIMIENTOS RECIENTES -->
+<div class="transactions-section">
+    <h3>Movimientos Recientes</h3>
+    <table class="transaction-table">
+        <thead>
+            <tr>
+                <th>Fecha</th>
+                <th>Descripción / Detalle</th>
+                <th>Referencia</th>
+                <th>Monto</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>03 Nov 2026</td>
+                <td>Transferencia Recibida - Nómina Mensual</td>
+                <td>TX-992384</td>
+                <td class="tx-amount tx-positive">+RD$ 35,000.00</td>
+            </tr>
+            <tr>
+                <td>02 Nov 2026</td>
+                <td>Pago de Servicio - Claro Telecomunicaciones</td>
+                <td>TX-881204</td>
+                <td class="tx-amount tx-negative">-RD$ 2,450.00</td>
+            </tr>
+            <tr>
+                <td>31 Oct 2026</td>
+                <td>Consumo Supermercados Nacional</td>
+                <td>TX-771923</td>
+                <td class="tx-amount tx-negative">-RD$ 4,120.50</td>
+            </tr>
+            <tr>
+                <td>28 Oct 2026</td>
+                <td>Retiro de Efectivo - ATM Sambil</td>
+                <td>TX-551029</td>
+                <td class="tx-amount tx-negative">-RD$ 2,000.00</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+    <!-- 6. PIE DE PÁGINA COMPLETO (FOOTER) -->
+    <footer class="footer">
+        <div class="footer-top">
+            <!-- Columna de contacto y Redes Sociales -->
+            <div class="footer-col">
+                <h4>Contáctanos</h4>
+                <div class="contact-item">
+                    <i class="fa-solid fa-phone"></i>
+                    <span>809-288-4722</span>
+                </div>
+                <div class="contact-item">
+                    <i class="fa-solid fa-location-dot"></i>
+                    <span>Sucursales, subagentes y marcas afiliadas</span>
+                </div>
+                <div class="social-links">
+                    <a href="#"><i class="fa-brands fa-facebook"></i></a>
+                    <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
+                    <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+                </div>
+            </div>
+            
+            <!-- Columna Ayuda -->
+            <div class="footer-col">
+                <h4>¿Necesitas Ayuda?</h4>
+                <ul>
+                    <li><a href="#">Videos tutoriales</a></li>
+                    <li><a href="#">Preguntas Frecuentes</a></li>
+                    <li><a href="#">Servicio Al Cliente</a></li>
+                </ul>
+            </div>
+
+            <!-- Columna Legal -->
+            <div class="footer-col">
+                <h4>Informaciones</h4>
+                <ul>
+                    <li><a href="#">Seguridad y Fraude</a></li>
+                    <li><a href="#">Términos y Condiciones</a></li>
+                    <li><a href="#">Aviso Legal y Privacidad</a></li>
+                    <li><a href="#">Tasas de Referencia</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Fila de Créditos y Logos Institucionales -->
+        <div class="footer-bottom">
+            <div>
+                &copy; 2026 Entidad Anónima y asociados. Todos los derechos reservados.
+            </div>
+            <div class="footer-legal-logos">
+                <span class="legal-badge">SB ENTIDAD AUTORIZADA</span>
+                <span class="legal-badge">UAF</span>
+                <span class="legal-badge">PRO USUARIO</span>
+            </div>
+        </div>
+    </footer>
+<!---------------------------------------------------------------------------- the last wall ---------------------------------------------------------------------------------------------->
+<!-- xclusive skript -->
+    <script>
+        function ejecutarLogout() {
+            console.log("Cerrando sesión de forma segura...");
+            
+            // Redirige al usuario de vuelta a la página de inicio de sesión
+            window.location.href = "login.html";
+        }
+    </script>
+    
+</body>
+</html>
+
+
+</body>
+</html>

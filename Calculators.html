@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal - LibertyFinancy</title>
+<link rel="stylesheet" href="vidaa.css" />
+<script src="hell.js"></script>
+       
+<body>
+<!-------------------------------------------------------------------------- From up to down ---------------------------------------------------------------------------------------------->
+
+
+<!-- Menú Superior -->
+<div class="top-menu">
+
+    <div>
+        <a href="#">Canales ProFinance</a>
+        <a href="#">Sobre Nosotros</a>
+        <a href="hellow.html">Inicio</a>
+    </div>
+</div>
+
+<!-- Barra de Navegación -->
+<header class="navbar">
+    <!--<div class="logo">LIBERT&FINANCy</div>-->
+
+	<div class="logo">
+	    <a href="#">
+ 	       <img src="logopry.png" alt="Banreservas Logo" style=" height: 70px; width: auto; display: block;"> 
+	    </a>
+	</div>
+
+
+    <nav class="main-nav">
+        <a href="Accounts.html">CUENTAS</a>
+        <a href="Activity.html">INVERSIONES</a>
+        <a href="Cards.html">TARJETAS</a>
+        <a href="#">PRÉSTAMOS</a>
+        <a href="#">SEGUROS</a>
+    </nav>
+</header>
+
+
+
+<!-- Banner Principal (Hero) -->
+<section class="hero-container">
+    <!-- CORREGIDO: Un solo contenedor slider con transiciones CSS integradas -->
+    <div class="hero-slider" id="heroSlider">
+        <!-- SLIDE 1 -->
+        <div class="slide" style="min-width: 100%; background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('https://media.istockphoto.com/id/1250601453/es/foto/ni%C3%B1a-calculando-n%C3%BAmeros-ni%C3%B1o-haciendo-la-tarea-matem%C3%A1ticas-para-los-ni%C3%B1os.webp?s=1024x1024&w=is&k=20&c=6-Vja2uTcwhS43uEywdIglEfmd4DS_jdy7AKn-lVtaE='); background-size: cover; background-position: center;">
+            <div class="hero-content">
+                 <h1>calculadoras</h1>
+            </div>
+        </div>
+        <!-- SLIDE 2 -->
+        <div class="slide" style="min-width: 100%; background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('https://blog.hubspot.es/hubfs/crecimientoventascalcular.jpeg'); background-size: cover; background-position: center;">
+            <div class="hero-content">
+		<h1>Calculadoras </h1>
+		<h1>de divisas, préstamos y más </h1>
+              </div>
+        </div>
+	<!-- SLIDE 3 -->
+        <div class="slide" style="min-width: 100%; background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('Todo-sobre-la-Ley-de-Segunda-Oportunidad.jpg'); background-size: cover; background-position: center;">
+            <div class="hero-content">
+		<h1>para tí</h1>
+            </div>
+        </div> 
+    </div>
+</section>
+
+
+
+
+    <!-- CONTENEDOR PRINCIPAL DE LA PÁGINA -->
+   
+ <main class="calculadoras-container">
+        
+        <!-- 1. MENÚ LATERAL IZQUIERDO -->
+        <aside class="sidebar-menu">
+            <div class="menu-section">
+                <h4 class="menu-title" onclick="activarCalculadora('divisas')">DIVISAS</h4>
+            </div>
+            
+            <div class="menu-section">
+                <h4 class="menu-title">INTERESES</h4>
+                <ul>
+                    <li><a href="#" onclick="activarCalculadora('plazo-fijo')">Depósito a Plazo Fijo</a></li>
+                </ul>
+            </div>
+            
+            <div class="menu-section">
+                <h4 class="menu-title">PRÉSTAMOS</h4>
+                <ul>
+                    <li><a href="#" onclick="activarCalculadora('prestamos')">Préstamos Calculadora</a></li>
+                </ul>
+            </div>
+        </aside>
+
+        <!-- 2. CONTENEDORES DE LAS CALCULADORAS -->
+        
+        <!-- A. CALCULADORA DE DIVISAS -->
+        <section id="calc-divisas" class="calculator-content">
+            <h2>Divisas</h2>
+            <div class="currency-selector">
+                <label>MONEDA</label>
+                <div>
+                    <button id="btnDolares" class="active" onclick="seleccionarMoneda('USD')">$ DÓLARES</button>
+                    <button id="btnEuros" onclick="seleccionarMoneda('EUR')">€ EUROS</button>
+                </div>
+            </div>
+
+            <div class="calc-block">
+                <h3>COMPRAMOS</h3>
+                <p id="rateCompraLabel">US$ 1.00 = RD$ 58.40</p>
+                <div class="input-row">
+                    <input type="number" id="inputCompraMoneda" placeholder="US$ 0.00" oninput="calcularDivisas('compra')">
+                    <span>=</span>
+                    <input type="text" id="resultCompraRD" placeholder="RD$ 0.00" readonly>
+                </div>
+            </div>
+
+            <div class="calc-block">
+                <h3>VENDEMOS</h3>
+                <p id="rateVentaLabel">US$ 1.00 = RD$ 61.40</p>
+                <div class="input-row">
+                    <input type="number" id="inputVentaMoneda" placeholder="US$ 0.00" oninput="calcularDivisas('venta')">
+                    <span>=</span>
+                    <input type="text" id="resultVentaRD" placeholder="RD$ 0.00" readonly>
+                </div>
+            </div>
+
+            <div class="action-row">
+                <!-- EXPLICACIÓN: Se cambia la función a borrarCamposDivisas() -->
+                <button class="btn-clear" onclick="borrarCamposDivisas()">BORRAR</button>
+            </div>
+        </section>
+
+
+        <!-- B. CALCULADORA DE PRÉSTAMOS -->
+        <section id="calc-prestamos" class="calculator-content" style="display: none;">
+            <h2>Calculadora de Préstamos</h2>
+            
+            <div class="calc-block">
+                <label>Monto Solicitado (RD$)</label>
+                <input type="number" id="prestamoMonto" placeholder="Ej. 500000" oninput="calcularCuotaPrestamo()">
+            </div>
+
+            <div class="calc-block">
+                <label>Tasa de Interés Anual (%)</label>
+                <input type="number" id="prestamoTasa" placeholder="Ej. 12.5" oninput="calcularCuotaPrestamo()">
+            </div>
+
+            <div class="calc-block">
+                <label>Plazo en Años</label>
+                <input type="number" id="prestamoAnios" placeholder="Ej. 5" oninput="calcularCuotaPrestamo()">
+            </div>
+
+            <div class="result-block">
+                <h3>Cuota Mensual Estimada:</h3>
+                <input type="text" id="resultadoCuota" placeholder="RD$ 0.00" readonly>
+            </div>
+
+            <div class="action-row">
+                <button class="btn-clear" onclick="borrarCamposPrestamos()">BORRAR</button>
+            </div>
+        </section>
+
+
+        <!-- C. CALCULADORA DE DEPÓSITO A PLAZO FIJO (INTERESES) -->
+        <section id="calc-plazo-fijo" class="calculator-content" style="display: none;">
+            <h2>Depósito a Plazo Fijo</h2>
+            
+            <div class="calc-block">
+                <label>Monto de Inversión (RD$)</label>
+                <input type="number" id="inversionMonto" placeholder="Ej. 100000" oninput="calcularRendimientoPlazo()">
+            </div>
+
+            <div class="calc-block">
+                <label>Tasa de Interés Anual (%)</label>
+                <input type="number" id="inversionTasa" placeholder="Ej. 6.0" oninput="calcularRendimientoPlazo()">
+            </div>
+
+            <div class="calc-block">
+                <label>Tiempo de Permanencia (Meses)</label>
+                <input type="number" id="inversionMeses" placeholder="Ej. 12" oninput="calcularRendimientoPlazo()">
+            </div>
+
+            <div class="result-block">
+                <h3>Interés Estimado a Ganar:</h3>
+                <input type="text" id="resultadoInteresGanado" placeholder="RD$ 0.00" readonly>
+                
+                <h3>Total Neto al Vencimiento:</h3>
+                <input type="text" id="resultadoTotalInversion" placeholder="RD$ 0.00" readonly>
+            </div>
+
+            <div class="action-row">
+                <button class="btn-clear" onclick="borrarCamposPlazoFijo()">BORRAR</button>
+            </div>
+        </section>
+
+    </main>
+
+
+
+
+
+    <!-- PIE DE PÁGINA -->
+    <footer class="footer">
+        <div class="footer-top">
+            <!-- Columna de contacto y Redes Sociales -->
+            <div class="footer-col">
+                <h4>Contáctanos</h4>
+                <div class="contact-item">
+                    <i class="fa-solid fa-phone"></i>
+                    <span>809-288-4722</span>
+                </div>
+                <div class="contact-item">
+                    <i class="fa-solid fa-location-dot"></i>
+                    <span>Sucursales, subagentes y marcas afiliadas</span>
+                </div>
+                <div class="social-links">
+                    <a href="#"><i class="fa-brands fa-facebook"></i></a>
+                    <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
+                    <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+                </div>
+            </div>
+            
+            <!-- Columna Ayuda -->
+            <div class="footer-col">
+                <h4>¿Necesitas Ayuda?</h4>
+                <ul>
+                    <li><a href="#">Videos tutoriales</a></li>
+                    <li><a href="#">Preguntas Frecuentes</a></li>
+                    <li><a href="#">Servicio Al Cliente</a></li>
+                </ul>
+            </div>
+
+            <!-- Columna Legal -->
+            <div class="footer-col">
+                <h4>Informaciones</h4>
+                <ul>
+                    <li><a href="#">Seguridad y Fraude</a></li>
+                    <li><a href="#">Términos y Condiciones</a></li>
+                    <li><a href="#">Aviso Legal y Privacidad</a></li>
+                    <li><a href="#">Tasas de Referencia</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Fila de Créditos y Logos Institucionales -->
+        <div class="footer-bottom">
+            <div>
+                &copy; 2026 Reservas & Libertades Financieras. Todos los derechos reservados.
+            </div>
+            <div class="footer-legal-logos">
+                <span class="legal-badge">SB ENTIDAD AUTORIZADA</span>
+                <span class="legal-badge">UAF</span>
+                <span class="legal-badge">PRO USUARIO</span>
+            </div>
+        </div>
+    </footer>
+
+
+
+
+
+<!-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+        <!-- 3. LÓGICA DE PROGRAMACIÓN (JAVASCRIPT) -->
+    <script>
+        // --- NAVEGACIÓN ENTRE CALCULADORAS ---
+        function activarCalculadora(idCalculadora) {
+            document.getElementById('calc-divisas').style.display = 'none';
+            document.getElementById('calc-prestamos').style.display = 'none';
+            document.getElementById('calc-plazo-fijo').style.display = 'none';
+            
+            document.getElementById('calc-' + idCalculadora).style.display = 'block';
+        }
+
+        // --- SISTEMA 1: LOGICA DE DIVISAS ---
+        const tasasCambio = {
+            USD: { compra: 58.40, venta: 61.40, simbolo: 'US$' },
+            EUR: { compra: 62.15, venta: 65.80, simbolo: '€' }
+        };
+
+        let monedaActual = 'USD';
+
+        function seleccionarMoneda(moneda) {
+            monedaActual = moneda;
+            document.getElementById('btnDolares').classList.toggle('active', moneda === 'USD');
+            document.getElementById('btnEuros').classList.toggle('active', moneda === 'EUR');
+
+            const datos = tasasCambio[moneda];
+            document.getElementById('rateCompraLabel').textContent = `${datos.simbolo} 1.00 = RD$ ${datos.compra.toFixed(2)}`;
+            document.getElementById('rateVentaLabel').textContent = `${datos.simbolo} 1.00 = RD$ ${datos.venta.toFixed(2)}`;
+
+            document.getElementById('inputCompraMoneda').placeholder = `${datos.simbolo} 0.00`;
+            document.getElementById('inputVentaMoneda').placeholder = `${datos.simbolo} 0.00`;
+
+            borrarCamposDivisas();
+        }
+
+        function calcularDivisas(tipo) {
+            const datos = tasasCambio[monedaActual];
+            if (tipo === 'compra') {
+                const valorMoneda = parseFloat(document.getElementById('inputCompraMoneda').value) || 0;
+                const totalRD = valorMoneda * datos.compra;
+                document.getElementById('resultCompraRD').value = totalRD > 0 ? `RD$ ${totalRD.toFixed(2)}` : '';
+            } else if (tipo === 'venta') {
+                const valorMoneda = parseFloat(document.getElementById('inputVentaMoneda').value) || 0;
+                const totalRD = valorMoneda * datos.venta;
+                document.getElementById('resultVentaRD').value = totalRD > 0 ? `RD$ ${totalRD.toFixed(2)}` : '';
+            }
+        }
+
+        function borrarCamposDivisas() {
+            document.getElementById('inputCompraMoneda').value = '';
+            document.getElementById('inputVentaMoneda').value = '';
+            document.getElementById('resultCompraRD').value = '';
+            document.getElementById('resultVentaRD').value = '';
+        }
+
+        // --- SISTEMA 2: LOGICA DE PRÉSTAMOS (Fórmula de amortización Francesa) ---
+        function calcularCuotaPrestamo() {
+            const monto = parseFloat(document.getElementById('prestamoMonto').value) || 0;
+            const tasaAnual = parseFloat(document.getElementById('prestamoTasa').value) || 0;
+            const anios = parseInt(document.getElementById('prestamoAnios').value) || 0;
+
+            if (monto > 0 && tasaAnual > 0 && anios > 0) {
+                const tasaMensual = (tasaAnual / 100) / 12;
+                const totalCuotas = anios * 12;
+                
+                const cuota = (monto * tasaMensual) / (1 - Math.pow(1 + tasaMensual, -totalCuotas));
+                
+                document.getElementById('resultadoCuota').value = `RD$ ${cuota.toFixed(2)}`;
+            } else {
+                document.getElementById('resultadoCuota').value = '';
+            }
+        }
+
+        function borrarCamposPrestamos() {
+            document.getElementById('prestamoMonto').value = '';
+            document.getElementById('prestamoTasa').value = '';
+            document.getElementById('prestamoAnios').value = '';
+            document.getElementById('resultadoCuota').value = '';
+        }
+
+        // --- SISTEMA 3: LOGICA DE PLAZO FIJO (Cálculo de interés simple ordinario) ---
+        function calcularRendimientoPlazo() {
+            const monto = parseFloat(document.getElementById('inversionMonto').value) || 0;
+            const tasaAnual = parseFloat(document.getElementById('inversionTasa').value) || 0;
+            const meses = parseInt(document.getElementById('inversionMeses').value) || 0;
+
+            if (monto > 0 && tasaAnual > 0 && meses > 0) {
+                const interesGanado = monto * (tasaAnual / 100) * (meses / 12);
+                const totalNeto = monto + interesGanado;
+                
+                // CORREGIDO: Se envolvieron los textos con comillas invertidas (backticks) para la interpolación correcta
+                document.getElementById('resultadoInteresGanado').value = `RD$ ${interesGanado.toFixed(2)}`;
+	        document.getElementById('resultadoTotalInversion').value = `RD$ ${totalNeto.toFixed(2)}`;
+	    } else {
+	        document.getElementById('resultadoInteresGanado').value = '';
+	        document.getElementById('resultadoTotalInversion').value = '';
+	    }
+	}
+
+
+
+
+ 	function borrarCamposPlazoFijo() {
+	    document.getElementById('inversionMonto').value = '';
+	    document.getElementById('inversionTasa').value = '';
+	    document.getElementById('inversionMeses').value = '';
+        	document.getElementById('resultadoInteresGanado').value = '';
+	    document.getElementById('resultadoTotalInversion').value = '';
+	}
+
+
+
+</script>
+
+</body>
+</html>

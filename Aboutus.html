@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Secciones Institucionales - Libertybank Model</title>
+<link rel="stylesheet" href="vidaa.css" />
+</head>
+<body>
+
+    <!-- MENÚ DE NAVEGACIÓN SIMULADO (Basado en tu Header Negro/Amarillo) -->
+    <header class="navbar-model">
+        <div class="logo">Liberty<span>bank</span></div>
+        <nav>
+            <a href="#" onclick="cargarModulo('cuentas')">CUENTAS</a>
+            <a href="#" onclick="cargarModulo('inversiones')">INVERSIONES</a>
+            <a href="#" onclick="cargarModulo('tarjetas')">TARJETAS</a>
+        </nav>
+    </header>
+
+<!-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------> 
+
+    <!-- INTERFAZ DINÁMICA PRINCIPAL -->
+    <main class="main-workspace">
+
+        <!-- ========================================== -->
+        <!-- MÓDULO 1: CUENTAS                          -->
+        <!-- ========================================== -->
+        <div id="modulo-cuentas" class="bank-module">
+            <!-- Sidebar Izquierdo -->
+            <aside class="sidebar-menu">
+                <div class="menu-section">
+                    <h4 class="active" onclick="mostrarSubContenido('cta-ahorro')">Cuentas de Ahorro</h4>
+                </div>
+                <div class="menu-section">
+                    <h4 onclick="mostrarSubContenido('cta-corriente')">Cuentas Corrientes</h4>
+                </div>
+                <div class="menu-section">
+                    <h4 onclick="mostrarSubContenido('cta-nommina')">Cuenta Nómina</h4>
+                </div>
+            </aside>
+
+
+            <!-- Contenido Detallado Derecho -->
+            <section class="details-content">
+                <div id="sub-cta-ahorro" class="sub-view">
+                    <h2>Cuenta de Ahorro en Pesos</h2>
+                    <p class="subtitle">La forma más segura y rentable de ver crecer tus ahorros.</p>
+                    <div class="info-block">
+                        <h3>Beneficios Principales</h3>
+                        <ul>
+                            <li>Generación de intereses mensuales calculados sobre tu saldo diario.</li>
+                            <li>Acceso inmediato a tus fondos mediante canales digitales 24/7.</li>
+                            <li>Tarjeta de Débito integrada sin costo de emisión.</li>
+                        </ul>
+                    </div>
+                </div>
+
+
+                <div id="sub-cta-corriente" class="sub-view" style="display: none;">
+                    <h2>Cuenta Corriente Personal</h2>
+                    <p class="subtitle">Administra tus finanzas cotidianas con total libertad y flexibilidad.</p>
+                    <div class="info-block">
+                        <h3>Características</h3>
+                        <ul>
+                            <li>Línea de crédito diferida sujeta a previa evaluación.</li>
+                            <li>Chequera personalizada para tus transacciones comerciales o personales.</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+
+
+        <!-- ========================================== -->
+        <!-- MÓDULO 2: INVERSIONES                      -->
+        <!-- ========================================== -->
+        <div id="modulo-inversiones" class="bank-module" style="display: none;">
+            <aside class="sidebar-menu">
+                <div class="menu-section">
+                    <h4 class="active" onclick="mostrarSubContenido('inv-plazo')">Depósitos a Plazo</h4>
+                </div>
+                <div class="menu-section">
+                    <h4 onclick="mostrarSubContenido('inv-fondos')">Fondos de Inversión</h4>
+                </div>
+            </aside>
+
+            <section class="details-content">
+                <div id="sub-inv-plazo" class="sub-view">
+                    <h2>Certificados Financieros / Plazo Fijo</h2>
+                    <p class="subtitle">Asegura una rentabilidad fija y competitiva para tus excedentes de capital.</p>
+                    <div class="info-block">
+                        <h3>Condiciones generales</h3>
+                        <ul>
+                            <li>Montos mínimos de apertura desde RD$ 10,000.</li>
+                            <li>Plazos flexibles desde los 30 hasta los 365 días.</li>
+                            <li>Pago de intereses mensuales depositados de forma automática en tu cuenta.</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- ========================================== -->
+        <!-- MÓDULO 3: TARJETAS                          -->
+        <!-- ========================================== -->
+        <div id="modulo-tarjetas" class="bank-module" style="display: none;">
+            <aside class="sidebar-menu">
+                <div class="menu-section">
+                    <h4 class="active" onclick="mostrarSubContenido('tj-credito')">Tarjetas de Crédito</h4>
+                </div>
+                <div class="menu-section">
+                    <h4 onclick="mostrarSubContenido('tj-debito')">Tarjetas de Débito</h4>
+                </div>
+            </aside>
+
+            <section class="details-content">
+                <div id="sub-tj-credito" class="sub-view">
+                    <h2>Tarjetas de Crédito MasterCard Personal</h2>
+                    <p class="subtitle">El respaldo internacional que necesitas para todas tus compras diarias.</p>
+                    <div class="info-block">
+                        <h3>Ventajas Exclusivas</h3>
+                        <ul>
+                            <li>Programa de acumulación de puntos por cada compra realizada.</li>
+                            <li>Hasta un 25% de devolución en establecimientos afiliados seleccionados.</li>
+                            <li>Financiamientos cómodos y seguros mediante transacciones diferidas.</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+    </main>
+
+    <!-- PIE DE PÁGINA COMPLETO (FOOTER) -->
+    <footer class="footer">
+        <div class="footer-top">
+            <!-- Columna de contacto y Redes Sociales -->
+            <div class="footer-col">
+                <h4>Contáctanos</h4>
+                <div class="contact-item">
+                    <i class="fa-solid fa-phone"></i>
+                    <span>809-288-4722</span>
+                </div>
+                <div class="contact-item">
+                    <i class="fa-solid fa-location-dot"></i>
+                    <span>Sucursales, subagentes y marcas afiliadas</span>
+                </div>
+                <div class="social-links">
+                    <a href="#"><i class="fa-brands fa-facebook"></i></a>
+                    <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
+                    <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+                </div>
+            </div>
+            
+            <!-- Columna Ayuda -->
+            <div class="footer-col">
+                <h4>¿Necesitas Ayuda?</h4>
+                <ul>
+                    <li><a href="#">Videos tutoriales</a></li>
+                    <li><a href="#">Preguntas Frecuentes</a></li>
+                    <li><a href="#">Servicio Al Cliente</a></li>
+                </ul>
+            </div>
+
+            <!-- Columna Legal -->
+            <div class="footer-col">
+                <h4>Informaciones</h4>
+                <ul>
+                    <li><a href="#">Seguridad y Fraude</a></li>
+                    <li><a href="#">Términos y Condiciones</a></li>
+                    <li><a href="#">Aviso Legal y Privacidad</a></li>
+                    <li><a href="#">Tasas de Referencia</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Fila de Créditos y Logos Institucionales -->
+        <div class="footer-bottom">
+            <div>
+                &copy; 2026 Entidad Anónima y asociados. Todos los derechos reservados.
+            </div>
+            <div class="footer-legal-logos">
+                <span class="legal-badge">SB ENTIDAD AUTORIZADA</span>
+                <span class="legal-badge">UAF</span>
+                <span class="legal-badge">PRO USUARIO</span>
+            </div>
+        </div>
+    </footer>
+
+
+
+
+    <!-- SCRIPT DE NAVEGACIÓN GENERAL (JAVASCRIPT) -->
+    <script>
+        // Cambia dinámicamente entre las secciones principales del menú superior (Cuentas, Inversiones, Tarjetas)
+        function cargarModulo(idModulo) {
+            // Ocultar todos los módulos principales del espacio de trabajo
+            document.getElementById('modulo-cuentas').style.display = 'none';
+            document.getElementById('modulo-inversiones').style.display = 'none';
+            document.getElementById('modulo-tarjetas').style.display = 'none';
+
+            // Mostrar el módulo que solicitó el usuario
+            document.getElementById('modulo-' + idModulo).style.display = 'flex';
+        }
+
+        // Cambia dinámicamente la información detallada según la opción elegida en los menús laterales (Sidebars)
+        function mostrarSubContenido(idSubVista) {
+            // Buscamos todas las sub-vistas del documento y las ocultamos
+            const vistas = document.querySelectorAll('.sub-view');
+            vistas.forEach(vista => {
+                vista.style.display = 'none';
+            });
+
+            // Mostramos exclusivamente el contenedor solicitado
+            document.getElementById('sub-' + idSubVista).style.display = 'block';
+        }
+
+
+
+
+
+
+    </script>
+
+</body>
+</html>

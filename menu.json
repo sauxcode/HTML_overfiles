@@ -1,0 +1,21 @@
+{
+  "menu": [
+    {
+      "title": "Inicio",
+      "link": "index.html"
+    },
+    {
+      "title": "Servicios",
+      "link": "services.html"
+    },
+    {
+      "title": "Sobre Nosotros",
+      "link": "us.html"
+    },
+    {
+      "title": "Contacto",
+      "link": "contact.html"
+    }
+  ]
+}
+

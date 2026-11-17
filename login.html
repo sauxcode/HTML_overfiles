@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal - LibertyFinancy</title>
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+<link rel="stylesheet" href="vidaa.css" />
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script src="hell.js"></script>
+<link href="logosec.png" rel="icon">
+
+</head>
+<body>
+<!-------------------------------------------------------------------------- From up to down ---------------------------------------------------------------------------------------------->
+   
+
+    <!-- Menú Superior Reutilizado -->
+    <div class="top-menu">
+        <div>USD - Compra: 58.40 | Venta: 61.40</div>
+        <div>
+            <a href="#">Ayuda Urgente</a>
+            <a href="#">Seguridad Bancaria</a>
+        </div>
+    </div>
+
+    <!-- Barra de Navegación Reutilizada -->
+    <header class="navbar">
+	<div class="logo">
+	    <a href="hellow.html">
+ 	       <img src="logopry.png" alt="Banreservas Logo" style=" height: 70px; width: auto; display: block;"> 
+	    </a>
+	</div>
+
+        <nav class="main-nav">
+            <a href="hellow.html">INICIO</a>
+            <a href="#">PRODUCTOS</a>
+            <a href="Calculators.html">CALCULADORAS</a>
+        </nav>
+    </header>
+
+<!-- CUERPO CENTRAL DE INICIO DE SESIÓN -->
+<main class="login-wrapper">
+    <div class="login-card">
+        <h2>Acceso Clientes</h2>
+        <p>Introduce tus credenciales para acceder a tu banca digital.</p>
+        
+        <form id="loginForm" onsubmit="procesarLogin(event)">
+            <!-- Campo de Usuario -->
+            <div class="input-group">
+                <label for="username">Nombre de Usuario o Código</label>
+                <div class="input-field-wrapper">
+                    <i class="fa-solid fa-user"></i>
+                    <input type="text" id="username" placeholder="Ej. ssanchez" required>
+                </div>
+            </div>
+
+            <!-- Campo de Contraseña -->
+            <div class="input-group">
+                <label for="password">Contraseña Secreta</label>
+                <div class="input-field-wrapper">
+                    <i class="fa-solid fa-lock"></i>
+                    <input type="password" id="password" placeholder="password..." required>
+                </div>
+            </div>
+
+            <!-- Opciones Extra (CORREGIDO: Añadido el contenedor de apertura correcto) -->
+            <div class="form-options">
+                <label>
+                    <input type="checkbox" id="rememberMe"> Recordarme
+                </label>
+                <a href="#">¿Olvidó sus datos?</a>
+            </div>
+
+            <!-- Botón de Entrada -->
+            <button type="submit" class="btn-login">INGRESAR</button>
+        </form>
+    </div>
+</main>
+
+
+
+    <!-- 6. PIE DE PÁGINA COMPLETO (FOOTER) -->
+    <footer class="footer">
+        <div class="footer-top">
+            <!-- Columna de contacto y Redes Sociales -->
+            <div class="footer-col">
+                <h4>Contáctanos</h4>
+                <div class="contact-item">
+                    <i class="fa-solid fa-phone"></i>
+                    <span>809-288-4722</span>
+                </div>
+                <div class="contact-item">
+                    <i class="fa-solid fa-location-dot"></i>
+                    <span>Sucursales, subagentes y marcas afiliadas</span>
+                </div>
+            </div>
+            
+            <!-- Columna Ayuda -->
+            <div class="footer-col">
+                <h4>¿Necesitas Ayuda?</h4>
+                <ul>
+                    <li><a href="#">Videos tutoriales</a></li>
+                    <li><a href="#">Preguntas Frecuentes</a></li>
+                    <li><a href="#">Servicio Al Cliente</a></li>
+                </ul>
+            </div>
+
+            <!-- Columna Legal -->
+            <div class="footer-col">
+                <h4>Informaciones</h4>
+                <ul>
+                    <li><a href="#">Seguridad y Fraude</a></li>
+                    <li><a href="#">Términos y Condiciones</a></li>
+                    <li><a href="#">Aviso Legal y Privacidad</a></li>
+                    <li><a href="#">Tasas de Referencia</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Fila de Créditos y Logos Institucionales -->
+        <div class="footer-bottom">
+            <div>
+                &copy; 2026 Entidad Anónima y asociados. Todos los derechos reservados.
+            </div>
+            <div class="footer-legal-logos">
+                <span class="legal-badge">SB ENTIDAD AUTORIZADA</span>
+                <span class="legal-badge">UAF</span>
+                <span class="legal-badge">PRO USUARIO</span>
+            </div>
+        </div>
+    </footer>
+<!---------------------------------------------------------------------------- the last wall ---------------------------------------------------------------------------------------------->
+</body>
+</html>

@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Novedades - LibertyBank</title>
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+<link rel="stylesheet" href="vidaa.css" />
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script src="hell.js"></script>
+<script src="hard.js"></script>
+<link href="logosec.png" rel="icon">
+
+    <style>
+
+        /* --- SECCIÓN NECESIDADES --- */
+        .section-container {
+            padding: 60px 10%;
+            text-align: center;
+        }
+
+        .section-title {
+            font-size: 28px;
+            color: #e0e0e0;/*#383838*/
+            margin-bottom: 40px;
+        }
+
+        .tabs {
+           display: flex;
+            justify-content: center;
+            gap: 30px;
+	    color: #0a0000; 
+            margin-bottom: 30px;
+            border-bottom: 2px solid white ; 
+            padding-bottom: 10px;
+	    font-weight: bold;
+            cursor: pointer;
+ 	    /* align-self: flex-start;
+            border: 2px solid #f3f700; 
+            background: transparent;
+            color: #f3f700; 
+            padding: 12px 28px;
+            border-radius: 25px;
+            font-size: 14px;*/
+            /*
+            text-decoration: none;
+            text-align: center;*/
+        }
+
+        .tab-item {
+            background: transparent;
+	    color: white;
+            cursor: pointer;
+            font-weight: bold;
+            font-size: 14px;
+	   transition: 0.3s;
+	    border-radius: 25px;
+            /* border: 2px solid #fffffff;padding-bottom: 10px;*/
+	    padding: 12px;
+        }
+
+	.tab-item:hover{
+	   border: 2px solid #f3f700;
+	   color: yellow;
+	}
+
+        .tab-item.active {
+            color: #dfeb05; /* ; blue light: #0077c8*/
+            border-bottom: 3px solid #dfeb05;
+        }
+
+        .item-selct {
+            background: transparent;
+	    color: white;
+            cursor: pointer;
+            font-size: 14px;
+	   transition: 0.3s;
+	    border-radius: 25px;
+	    padding: 12px;
+	    margin: 30px;
+        }
+
+	.item-selct:hover{
+	   border: 2px solid #f3f700;
+	   color: yellow;
+	   padding: 20px;
+	}
+
+
+
+
+        /* --- SECCIÓN PROMOCIONES --- */
+
+	.zection-title {
+            font-size: 28px;
+            color: #383838;/*#e0e0e0*/
+            margin-bottom: 40px;
+        }
+
+        .promotions-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            margin-top: 20px;
+        }
+
+        .card {
+            background: white;
+            border-radius: 4px;
+            overflow: hidden;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+            text-align: left;
+            transition: 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        .card-img {
+            width: 100%;
+            height: 180px;
+            background-color: #ddd;
+            object-fit: cover;
+        }
+
+        .card-body {
+            padding: 20px;
+        }
+
+        .card-title {
+            font-size: 16px;
+            color: black;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+
+        .card-text {
+            font-size: 13px;
+            color: black;
+            margin-bottom: 15px;
+        }
+
+        .card-link {
+            color: #dbe302; /* Naranja de los botones de acción : ff8200*/
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: bold;
+        }
+
+           </style>
+</head>
+
+<body>
+<!-------------------------------------------------------------------------- From up to down ---------------------------------------------------------------------------------------------->
+   
+<!-- Menú Superior -->
+<div class="top-menu">
+    <div> USD - Compra: 59.50 | Venta: 60.10</div>
+    <div>
+        <a href="#">Canales ProFinance</a>
+        <a href="#">Sobre Nosotros</a>
+        <a href="Calculators.html">Calculadoras</a>
+    </div>
+</div>
+
+<!-- Barra de Navegación -->
+<header class="navbar">
+    <!--<div class="logo">LIBERT&FINANCy</div>-->
+            <a href="login.html" title="Click here for view dashboard/ Haga click aquí para ver info de su cuenta">
+ 	       <img src="logopry.png" alt="Banreservas Logo" style=" height: 70px; width: auto; display: block;"> 
+	    </a>
+
+
+    <nav class="main-nav">
+        <a href="Accounts.html">CUENTAS</a>
+        <a href="Activity.html">INVERSIONES</a>
+        <a href="Cards.html">TARJETAS</a>
+        <a href="#">PRÉSTAMOS</a>
+        <a href="#">SEGUROS</a>
+    </nav>
+</header>
+
+<!-- Banner Principal (Hero) -->
+<section class="hero-container">
+    <!-- CORREGIDO: Un solo contenedor slider con transiciones CSS integradas -->
+    <div class="hero-slider" id="heroSlider">
+        <!-- SLIDE 1 -->
+        <div class="slide" style="min-width: 100%; background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('https://lidom.com/media/uploads/2016/10/beisbol_dominicano_820.jpg'); background-size: cover; background-position: center;">
+            <div class="hero-content">
+                <h1>El deporte dominicano evoluciona hacia una nueva era</h1>
+                <button class="btn-hero">Conoce más</button>
+            </div>
+        </div>
+        <!-- SLIDE 2 -->
+        <div class="slide" style="min-width: 100%; background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('https://lh3.googleusercontent.com/gps-cs-s/ANWiy9R71r-8xy1exSAaEqPFig5inJzYCHjBzmUqqRJ7T6WJ4bbTXM3jZy-3ULewjKM3EUDmlXZwNFn9KgXblGFuy7ie7CuCijPGDkqiCfCV-5HecSGgGGNC7SivnEUFgf4bJROa2VCp=s1360-w1360-h1020-rw'); background-size: cover; background-position: center;">
+            <div class="hero-content">
+                <h1>Tus compras del supermercado te devuelven hasta un 15%</h1>
+                <button class="btn-hero">Ver Promoción</button>
+            </div>
+        </div>
+        <!-- SLIDE 3 -->
+        <div class="slide" style="min-width: 100%; background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('https://concepto.de/wp-content/uploads/2015/08/familia-extensa-e1591818033557.jpg'); background-size: cover; background-position: center;">
+            <div class="hero-content">
+                <h1>Protege lo que más quieres con nuestros Seguros de Hogar</h1>
+                <button class="btn-hero">Cotizar Ahora</button>
+            </div>
+        </div>
+        <!-- SLIDE 3+1 -->
+        <div class="slide" style="min-width: 100%; background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('https://media.ambito.com/p/b24f16f16c84abf99d97511b486216c5/adjuntos/239/imagenes/043/538/0043538075/655x368/smart/gammers.jpg'); background-size: cover; background-position: center;">
+            <div class="hero-content">
+                <h1>Unéte al campeonato de gamers más esperado de este año</h1>
+                <button class="btn-hero">Más información</button>
+            </div>
+        </div>
+        <!-- SLIDE 5 -->
+        <div class="slide" style="min-width: 100%; background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('https://www.goredforwomen.org/es/-/media/AHA/H4GM/Article-Images/travel.jpg?sc_lang=es'); background-size: cover; background-position: center;">
+            <div class="hero-content">
+                <h1>Puedes aplicar para hasta un 75% de descuento en tu próximo viaje desde LibertyAir</h1>
+                <button class="btn-hero">Aplicar Ahora</button>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+
+<!-- Sección Necesidades -->
+<section class="section-container">
+    <h2 class="section-title">Necesidades</h2>
+    <div class="tabs">
+        <button class="tab-item active" data-target="casa">Amuebla tu casa</button>
+        <button class="tab-item" data-target="carro">Compra el carro de tus sueños</button>
+        <button class="tab-item" data-target="remodela">Compra o remodela tu casa</button>
+        <button class="tab-item" data-target="estudio">Construye tu patrimonio</button>
+    </div>
+    <div style="margin-top: 20px; text-align: center;">
+        <p id="dynamic-need-text" style="color: #555; max-width: 600px; margin: 0 auto; font-size: 16px;">
+            Con nuestras soluciones financieras puedes amueblar tu casa como prefieras. Cuenta con facilidades de financiamiento adaptadas a ti de manera cómoda.
+        </p>
+	 <button class="item-selct">Soluciones financieras</button>
+    </div>
+</section>
+
+
+
+<!-- Sección Promociones Especiales -->
+<section class="section-container" style="background-color: #f0f4f8;">
+    <h2 class="zection-title">Promociones Especiales</h2>
+    <div class="promotions-grid">
+        <!-- Tarjeta 1 -->
+        <div class="card">
+            <img src="https://www.upb.edu.co/es/imagenes/img-raee-blog-sostenibilidad-1464231652905.jpeg" alt="Aparatos Electrónicos" class="card-img">
+            <div class="card-body">
+                <div class="card-title">Reciba 25% de devolución al comprar aparatos electrónicos afiliados</div>
+                <div class="card-text">Con Tarjetas de Crédito Mastercard Personal y Comercial.</div>
+                <a href="#" class="card-link">Ver los detalles ></a>
+            </div>
+        </div>
+        <!-- Tarjeta 2 -->
+        <div class="card">
+            <img src="https://superbravo.com.do/wp-content/uploads/2017/05/BRAVO-ESPERILLAGAB_8135.jpg" alt="Supermercado" class="card-img">
+            <div class="card-body">
+                <div class="card-title">Recibe hasta 15% de devolución en Supermercados Bravo</div>
+                <div class="card-text">Con tu Tarjeta de Débito Mastercard LibertyBank.</div>
+                <a href="#" class="card-link">Ver los detalles ></a>
+            </div>
+        </div>
+        <!-- Tarjeta 3 -->
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1789758489809-f10f5b129c49?q=80&w=1400&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=NHwxMjA3fDE%3D" alt="Hoteles" class="card-img">
+            <div class="card-body">
+                <div class="card-title">Reciba un 15% de devolución en hoteles y lugares turísticos</div>
+                <div class="card-text">Con Tarjetas de Crédito Mastercard LibertyBank seleccionadas.</div>
+                <a href="#" class="card-link">Ver los detalles ></a>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- 5. SECCIÓN DEL MAPA DE SUCURSALES -->
+<section class="map-section" id="mapSectionContainer">
+    <div class="map-card">
+        <div class="map-info">
+            <h3>Ubique sucursales cercanas a usted</h3>
+            <p>Obtenga información en tiempo real sobre la ubicación exacta de nuestras sucursales y cajeros automáticos en toda la República Dominicana.</p>
+            <!-- BOTÓN RESTAURADO: Ejecuta la función para revelar el mapa -->
+            <button class="btn-map" id="btnEncuentraSucursal" onclick="activarYCentrarMapa()">Encuentra una sucursal</button>
+        </div>
+
+        <!-- CONTROLADORES PARA FILTRAR EL MAPA (Se moverán aquí arriba para navegación cómoda) -->
+        <div class="map-controls" style="margin: 15px 0; text-align: center;">
+            <button class="btn_selct" onclick="filtrarMapa('todos')" >Mostrar Todo</button> <!--style="padding: 8px 16px; margin: 5px; cursor: pointer; "-->
+            <button class="btn_selct" onclick="filtrarMapa('oficina')" >🏢 Oficinas</button> <!--style="padding: 8px 16px; margin: 5px; cursor: pointer;" -->
+            <button class="btn_selct" onclick="filtrarMapa('cajero')" >🏧 Cajeros Automáticos</button> <!--style="padding: 8px 16px; margin: 5px; cursor: pointer;" -->
+        </div>
+
+        <!-- Contenedor del mapa real -->
+        <div class="map-card-body">
+            <div id="map" style="width: 100%; height: 400px; background-color: #eee;"></div>
+        </div>
+    </div>
+</section>
+
+    <!-- 6. PIE DE PÁGINA COMPLETO (FOOTER) -->
+    <footer class="footer">
+        <div class="footer-top">
+            <!-- Columna de contacto y Redes Sociales -->
+            <div class="footer-col">
+                <h4>Contáctanos</h4>
+                <div class="contact-item">
+                    <i class="fa-solid fa-phone"></i>
+                    <span>809-288-4722</span>
+                </div>
+                <div class="contact-item">
+                    <i class="fa-solid fa-location-dot"></i>
+                    <span>Sucursales, subagentes y marcas afiliadas</span>
+                </div>
+                <div class="social-links">
+                    <a href="#"><i class="fa-brands fa-facebook"></i></a>
+                    <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
+                    <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+                </div>
+            </div>
+            
+            <!-- Columna Ayuda -->
+            <div class="footer-col">
+                <h4>¿Necesitas Ayuda?</h4>
+                <ul>
+                    <li><a href="#">Videos tutoriales</a></li>
+                    <li><a href="#">Preguntas Frecuentes</a></li>
+                    <li><a href="#">Servicio Al Cliente</a></li>
+                </ul>
+            </div>
+
+            <!-- Columna Legal -->
+            <div class="footer-col">
+                <h4>Informaciones</h4>
+                <ul>
+                    <li><a href="#">Seguridad y Fraude</a></li>
+                    <li><a href="#">Términos y Condiciones</a></li>
+                    <li><a href="#">Aviso Legal y Privacidad</a></li>
+                    <li><a href="#">Tasas de Referencia</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Fila de Créditos y Logos Institucionales -->
+        <div class="footer-bottom">
+            <div>
+                &copy; 2026 Entidad Anónima y asociados. Todos los derechos reservados.
+            </div>
+            <div class="footer-legal-logos">
+                <span class="legal-badge">SB ENTIDAD AUTORIZADA</span>
+                <span class="legal-badge">UAF</span>
+                <span class="legal-badge">PRO USUARIO</span>
+            </div>
+        </div>
+    </footer>
+
+    <!-- 7. VENTANA DE AVISO DE COOKIES -->
+    <div class="cookie-banner" id="cookieBanner">
+        <div class="cookie-text" style=" color: black;">
+            El presente portal Web utiliza Cookies que almacenan de forma segura el comportamiento del Usuario. El uso de estas herramientas ayuda a adaptar nuestros productos, servicios y navegación a tus intereses específicos.
+        </div>
+        <div class="cookie-actions">
+            <button class="btn-cookie btn-config">Configurar</button>
+            <button class="btn-cookie btn-accept" onclick="acceptCookies()">Aceptar</button>
+        </div>
+    </div>
+	
+	<!-- Advanced options for cookies -->
+<div class="cookie-modal" id="cookieModal">
+    <div class="cookie-modal-content">
+        <h3>Configuración de Cookies</h3>
+        <p>Selecciona qué tipos de cookies permites almacenar en tu navegador:</p>
+        
+        <div class="cookie-options">
+            <div class="cookie-opt-item">
+                <label>
+                    <input type="checkbox" id="cookieEsenciales" checked disabled>
+                    <strong>Cookies Necesarias (Obligatorias)</strong>
+                </label>
+                <p>Permiten el funcionamiento básico del portal de banca, inicio de sesión seguro y carga de mapas.</p>
+            </div>
+            
+            <div class="cookie-opt-item">
+                <label>
+                    <input type="checkbox" id="cookieAnaliticas">
+                    <strong>Cookies Analíticas</strong>
+                </label>
+                <p>Nos ayudan a entender cómo usas la web para mejorar la velocidad y nuestros servicios.</p>
+            </div>
+            
+            <div class="cookie-opt-item">
+                <label>
+                    <input type="checkbox" id="cookieMarketing">
+                    <strong>Cookies de Personalización y Marketing</strong>
+                </label>
+                <p>Utilizadas para mostrarte ofertas de préstamos o tarjetas adaptadas a tus intereses reales.</p>
+            </div>
+        </div>
+
+        <div class="cookie-modal-actions">
+            <button class="btn-cookie btn-close-modal" onclick="cerrarModalCookies()">Cancelar</button>
+            <button class="btn-cookie btn-save-modal" onclick="guardarConfiguracionCookies()">Guardar Preferencias</button>
+        </div>
+    </div>
+</div>
+
+<!---------------------------------------------------------------------------- the last wall ---------------------------------------------------------------------------------------------->
+
+</body>
+</html>

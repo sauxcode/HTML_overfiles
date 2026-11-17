@@ -1,0 +1,313 @@
+/* Variables de color y diseño */
+:root {
+    --primary-color: #ffffff; /*  Blanco - Trasfondo de la sección "Nuevo registro" */
+   /* --primary-hover: #000000;*/ 
+    --buttoni-color: #212021; /* El botón (Consultar) */
+    --buttoni-hover: #000000;
+    --secondary-color: #ffffff f;
+    --success-color: #00e79b; /* Agregar datos */
+    --success-hover: #009768;
+    --warning-color: #fd9f00; /* Modificar datos */
+    --danger-color: #ff0000;  /* Eliminar datos */
+    --bg-color: #82b5e8;
+    --card-bg: #b0e4ff;
+    --text-main: #000000;
+    --text-muted: #0c2c59;
+    --border-color: #818488;
+    --radius: 12px;
+    --shadow: 0 4px 6px -1px rgb(0 0 0 / 50%), 0 2px 4px -2px rgba(0, 0, 0, 0.05);
+}
+
+
+
+/* Diseños generales */
+body {
+    background-color: var(--bg-color);
+    color: var(--text-main);
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 960px;
+}
+
+h2 {
+    font-weight: bold;
+    color: var(--text-main);
+    letter-spacing: -0.025em;
+    text-align: center;
+}
+
+
+
+/* Tarjetas (Cards) */
+.card {
+    background-color: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    overflow: hidden;
+    transition: transform 0.2s ease;
+}
+
+.card-header {
+    font-weight: 600;
+    font-size: 1.05rem;
+    padding: 1rem 1.5rem;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.card-body {
+    padding: 1.5rem;
+}
+
+
+
+/* Inputs y Formularios */
+.form-label {
+    font-weight: 500;
+    font-size: 0.9rem;
+    color: var(--text-main);
+    margin-bottom: 0.4rem;
+}
+
+.form-control { /* form bar */
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 0.6rem 0.9rem;
+    font-size: 0.95rem;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.form-control:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgb(79 70 229 / 50%);
+    outline: none;
+}
+
+.form-columna {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem; /* Controla la distancia vertical entre cada campo */
+}
+
+/* Asegura que cada etiqueta esté encima de su input con un pequeño espacio */
+.campo-grupo {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+}
+
+/* Separa el contenedor de los botones respecto al último input */
+.acciones-formulario {
+    display: flex;
+    gap: 0.75rem; /* Separa los botones entre sí horizontalmente */
+    margin-top: 1.5rem;
+}
+
+form.A{
+    padding: 30px;
+    text-align: center;
+}
+
+
+
+/* Botones personalizados */
+.btn {
+    border-radius: 8px;
+    font-weight: 500;
+    padding: 0.55rem 1.2rem;
+    transition: all 0.2s ease;
+    border: none;
+    text-decoration: none;
+}
+
+.btn:hover {
+    transform: translateY(-1px);
+}
+
+.btn-success {
+    background-color: var(--success-color);
+}
+
+.btn-success:hover {
+    background-color: var(--success-hover);
+}
+
+.btn-outline-primary {
+    border: 1px solid var(--buttoni-color);
+    color: var(--buttoni-color);
+}
+
+.btn-outline-primary:hover {
+    background-color: var(--primary-color);
+}
+
+.btn-warning {
+    background-color: var(--warning-color);
+    color: #ffffff;
+}
+
+.btn-warning:hover {
+    background-color: #d97706;
+    color: #ffffff;
+}
+
+.btn-danger {
+    background-color: var(--danger-color);
+    color: #ffffff;
+}
+
+.btn-danger:hover {
+    background-color: #dc2626;
+}
+
+
+
+/* Records table */
+.table {
+    vertical-align: middle;
+    border-radius: 1px solid;
+}
+
+.table thead th {
+    background-color: #f8fafc;
+    color: var(--text-muted);
+    font-weight: 600;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    padding: 1rem 1.2rem;
+    border-radius: 1px solid;
+}
+
+.table thead th:hover{
+    background-color: #5e69fb; /*#f1f5f9*/
+    border-radius: 1px solid;
+    color: white;
+    transition: background-color 0.15s ease;
+}
+
+.table tbody td {
+    padding: 1rem 1.2rem;
+    border-bottom: 1px solid;
+    font-size: 0.95rem;
+}
+
+.table-striped tbody tr:nth-of-type(odd) {
+    background-color: #fcfcfd;
+}
+
+.table tbody tr:hover{
+    background-color: #5e69fb; /*#f1f5f9*/
+    border-radius: 1px solid;
+    color: white;
+    transition: background-color 0.15s ease;
+}
+
+/* comodidad de botones*/
+.acciones-tabla {
+    display: flex;
+    flex-direction: row;     /* Los coloca uno al lado del otro */
+    justify-content: center; /* Los centra en la columna */
+    align-items: center;
+    gap: 0.5rem;             /* Espacio limpio entre Modificar y Borrar */
+    white-space: nowrap;     /* Evita que el texto del botón se parta */
+}
+
+/* Ajuste de tamaño para botones dentro de la tabla */
+.acciones-tabla .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.4rem 0.85rem;
+    font-size: 0.85rem;
+    margin: 0;
+}
+
+
+
+
+/* Fondo oscuro del Modal */
+.modal-overlay {
+    display: none; /* Oculto por defecto */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(15, 23, 42, 0.6); /* Fondo oscuro semitransparente */
+    backdrop-filter: blur(3px); /* Desenfoque sutil del fondo */
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+}
+
+/* Clase para mostrar el modal */
+.modal-overlay.activo {
+    display: flex;
+}
+
+
+/* Ventana interna del Modal */
+.modal-contenido {
+    background-color: #ffffff;
+    width: 100%;
+    max-width: 500px;
+    border-radius: 12px;
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    animation: aparecerModal 0.25s ease-out;
+}
+
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 1.5rem;
+    background-color: var(--primary-color, #4f46e5);
+    color: #ffffff;
+    font-weight: 600;
+}
+
+.btn-cerrar-modal {
+    background: none;
+    border: none;
+    color: #ffffff;
+    font-size: 1.5rem;
+    line-height: 1;
+    cursor: pointer;
+}
+
+.modal-body {
+    padding: 1.5rem;
+}
+
+
+
+/* Aparece modal */
+@keyframes aparecerModal {
+    from {
+        opacity: 0;
+        transform: translateY(-15px) scale(0.98);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+
+/* Responsividad para pantallas pequeñas */
+@media (max-width: 768px) {
+    .table-responsive-wrapper {
+        overflow-x: auto;
+    }
+    
+    .btn-sm {
+        display: inline-block;
+        margin-bottom: 4px;
+    }
+}

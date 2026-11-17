@@ -1,8 +1,9 @@
+(Elementos a descargar desde este repositorio)
 DBs/
 │
 ├── server.js
 ├── package.json
-├── database.db      <-- (se creará automáticamente al iniciar)
+├── database.db      
 ├── README.md
 ├── public/
 │   └── visit.css      
